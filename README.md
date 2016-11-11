@@ -9,6 +9,11 @@
     - There is a `bookings.json` file in the `prototype` directory of this repository that you may use for your initial data.  Feel free to create more.
 1. Send a zip file of your repository to your contact at EMS.
 
+### Tips
+
+- If you are familiar with [Redux](http://redux.js.org/), feel free to incorporate it in your solution.  This applies to any other react sister libraries you may prefer to use as well.
+- Focus on your approach to the problem, the structure and reasoning behind your implementation, and the quality of your code.  Fewer features implemented at higher quality is of more value than missing the mark by focusing too much on visual details.
+
 ## Prototype Use Cases
 
 The images below represent a prototype for a mobile application that displays to a user a list of her bookings in chronological order.  Following are use cases intended for this simple application.
