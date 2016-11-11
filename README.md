@@ -4,7 +4,7 @@
 ## Tasks
 
 1. Clone this repository or make your own.
-1. Implement the use cases described below.
+1. Implement the use cases below using [React](https://facebook.github.io/react/) to build a a small web application.
     - Use the images to guide the visual design of your implementation.
     - There is a `bookings.json` file in the `prototype` directory of this repository that you may use for your initial data.  Feel free to create more.
 1. Send a zip file of your repository to your contact at EMS.
