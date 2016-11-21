@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { fetchBookings } from '../actions'
 import BookingGroupList from '../components/BookingGroupList'
+import { getBookingGroups } from '../lib/'
 
 class Bookings extends Component {
   static propTypes = {
@@ -32,11 +33,11 @@ class Bookings extends Component {
 }
 
 const mapStateToProps = state => {
-  const { date: selectedDate, bookings: { groups }, search: searchQuery } = state
+  const { date: selectedDate, bookings, search: searchQuery } = state
 
   return {
     selectedDate,
-    groups,
+    groups: getBookingGroups(selectedDate, bookings),
     searchQuery
   }
 }

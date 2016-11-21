@@ -11,10 +11,9 @@ export const selectDate = date => ({
 
 export const RECEIVE_BOOKINGS = 'RECEIVE_BOOKINGS'
 
-export const receiveBookings = (selectedDate, bookings) => ({
+export const receiveBookings = (bookings) => ({
   type: RECEIVE_BOOKINGS,
-  bookings,
-  date: selectedDate
+  bookings
 })
 
 export const fetchBookings = (selectedDate, query) => {
@@ -24,7 +23,7 @@ export const fetchBookings = (selectedDate, query) => {
     return moment(start).isBetween(selectedDate, thirtyDaysFromSelectedDate, null, '[]')
   })
 
-  return receiveBookings(selectedDate, bookingsForNextThirtyDays)
+  return receiveBookings(bookingsForNextThirtyDays)
 }
 
 export const OPEN_CALENDAR = 'OPEN_CALENDAR'
