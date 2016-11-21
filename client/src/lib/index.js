@@ -14,10 +14,16 @@ const createBookingGroup = (displayDate, bookings) => ({
   bookings: orderBy(bookings, ({ start }) => moment(start).unix()).map(booking => {
     const { start, end } = booking
 
+    const startDate = moment(start)
+    const endDate = moment(end)
+
     return {
       ...booking,
-      startTime: moment(start).format(DISPLAY_TIME_FORMAT),
-      endTime: moment(end).format(DISPLAY_TIME_FORMAT)
+      startTime: startDate.format(DISPLAY_TIME_FORMAT),
+      endTime: endDate.format(DISPLAY_TIME_FORMAT),
+      duration: startDate.from(endDate, true)
+        .replace(/(hours|minutes)/g, match => match[0])
+        .replace(/(\d+) (h|m)/g, '$1$2')
     }
   })
 })

@@ -39,15 +39,15 @@
             "id": 5,
             "eventName": "November Miscellany",
             "roomName": "Conference Room 1",
-            "start": "2016-11-21T04:00:00.000Z",
-            "end": "2016-11-21T04:30:00.000Z"
+            "start": "2016-11-22T04:00:00.000Z",
+            "end": "2016-11-22T04:30:00.000Z"
         },
         {
             "id": 6,
             "eventName": "The Clinton's Take Office",
             "roomName": "Conference Room 2",
-            "start": "2016-11-21T04:30:00.000Z",
-            "end": "2016-11-21T04:45:00.000Z"
+            "start": "2016-11-22T04:30:00.000Z",
+            "end": "2016-11-22T04:45:00.000Z"
         },
         {
             "id": 7,

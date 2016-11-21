@@ -45,3 +45,7 @@
   height: 5em;
   padding: 2em 0.8em;
 }
+
+.time span {
+  display: block;
+}
