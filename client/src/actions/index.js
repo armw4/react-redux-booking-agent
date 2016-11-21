@@ -1,7 +1,6 @@
 import moment from 'moment'
 import { bookings } from '../../../prototype/bookings.json'
 import filter from 'lodash.filter'
-import { getBookingGroups } from '../lib'
 
 export const SELECT_DATE = 'SELECT_DATE'
 
@@ -12,9 +11,10 @@ export const selectDate = date => ({
 
 export const RECEIVE_BOOKINGS = 'RECEIVE_BOOKINGS'
 
-export const receiveBookings = bookings => ({
+export const receiveBookings = (selectedDate, bookings) => ({
   type: RECEIVE_BOOKINGS,
-  bookings
+  bookings,
+  date: selectedDate
 })
 
 export const fetchBookings = (selectedDate, query) => {
@@ -24,7 +24,7 @@ export const fetchBookings = (selectedDate, query) => {
     return moment(start).isBetween(selectedDate, thirtyDaysFromSelectedDate, null, '[]')
   })
 
-  return receiveBookings(getBookingGroups(selectedDate, bookingsForNextThirtyDays))
+  return receiveBookings(selectedDate, bookingsForNextThirtyDays)
 }
 
 export const OPEN_CALENDAR = 'OPEN_CALENDAR'
