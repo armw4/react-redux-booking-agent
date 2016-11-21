@@ -6,7 +6,7 @@ import BookingGroupList from '../components/BookingGroupList'
 class Bookings extends Component {
   static propTypes = {
     selectedDate: PropTypes.object.isRequired,
-    bookings: PropTypes.array.isRequired,
+    groups: PropTypes.array.isRequired,
     dispatch: PropTypes.func.isRequired,
     searchQuery: PropTypes.string
   }
@@ -25,18 +25,18 @@ class Bookings extends Component {
   }
 
   render() {
-    const { bookings: groups } = this.props
+    const { groups } = this.props
 
     return groups.length === 0 ? <span>loading</span> : <BookingGroupList groups={groups} />
   }
 }
 
 const mapStateToProps = state => {
-  const { date: selectedDate, bookings, search: searchQuery } = state
+  const { date: selectedDate, bookings: { groups }, search: searchQuery } = state
 
   return {
     selectedDate,
-    bookings,
+    groups,
     searchQuery
   }
 }
