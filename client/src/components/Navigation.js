@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import { SEARCH_OPEN, CALENDAR_OPEN, CALENDAR_CLOSED } from '../constants'
+import Hamburger from '../../font-awesome/blue/svg/bars.svg'
 
 export default class extends PureComponent {
   render() {
@@ -13,7 +14,7 @@ export default class extends PureComponent {
           <nav className="navigation">
             <ul className="group">
               <li className="burger">
-                Hamburger
+                <Hamburger />
               </li>
               <li className="date">
                 Date

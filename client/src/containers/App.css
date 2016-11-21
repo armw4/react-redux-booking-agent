@@ -48,6 +48,11 @@
   float: left;
 }
 
+.navigation i svg {
+  width: 16px;
+  height: 16px;
+}
+
 .booking-group > .booking:not(:last-child) {
   border-bottom: 1px solid #E6E7E8;
 }
