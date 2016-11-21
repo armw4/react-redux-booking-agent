@@ -1,18 +1,16 @@
-import React { Component }from 'react
+import React from 'react
 import Navigation from '../components/Navigation'
 import { connect } from 'react-redux'
 
-class Container extends Component {
-  render() {
-    return <Navigation {...this.props} />
-  }
+const Container = ({ state, searchQuery })=> {
+  return <Navigation state={state} />
 }
 
-const mapStateToProps = state => {
-  const { calendar } = state
+const mapStateToProps = ({ calendar: state, search: searchQuery }) => {
 
   return {
-    state: calendar
+    state,
+    searchQuery
   }
 }
 

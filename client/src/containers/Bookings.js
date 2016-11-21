@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { fetchBookings } from '../actions'
+import BookingGroupList from '../components/BookingGroupList'
 
 class Bookings extends Component {
   static propTypes = {
@@ -24,9 +25,9 @@ class Bookings extends Component {
   }
 
   render() {
-    const { bookings } = this.props
+    const { bookings: groups } = this.props
 
-    return bookings.length === 0 ? <span>loading</span> : <span>hello world</span>
+    return groups.length === 0 ? <span>loading</span> : <BookingGroupList groups={groups} />
   }
 }
 

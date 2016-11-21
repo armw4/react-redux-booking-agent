@@ -19,6 +19,7 @@ export const receiveBookings = bookings => ({
 
 export const fetchBookings = (selectedDate, query) => {
   const thirtyDaysFromSelectedDate = moment(selectedDate).add(30, 'd')
+
   const bookingsForNextThirtyDays = filter(bookings, ({ start }) => {
     return moment(start).isBetween(selectedDate, thirtyDaysFromSelectedDate, null, '[]')
   })

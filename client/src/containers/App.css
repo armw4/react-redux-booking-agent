@@ -22,3 +22,25 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.booking-group h5 {
+  font-weight: 400;
+  background-color: #F5F5F5;
+  padding: 0.8em;
+  border-top: 1px solid #E6E7E8;
+  border-bottom: 1px solid #E6E7E8;
+  margin: 0
+}
+
+.booking-group > .booking:not(:last-child) {
+  border-bottom: 1px solid #E6E7E8;
+}
+
+.booking-group .booking {
+  padding: 0.8em;
+}
+
+.booking-group .booking.empty {
+  height: 5em;
+  padding: 2em 0.8em;
+}
