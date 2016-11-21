@@ -1,4 +1,4 @@
-import { SEARCH_BOOKINGS } from '../actions/'
+import { SEARCH_BOOKINGS, DISMISS_SEARCH } from '../actions/'
 
 const DEFAULT_STATE = null
 
