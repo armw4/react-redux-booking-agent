@@ -13,7 +13,7 @@ export default (state = DEFAULT_STATE, action) => {
 
       return {
         groups,
-        bookings: action.bookings
+        events: action.bookings
       }
     default:
       return state
