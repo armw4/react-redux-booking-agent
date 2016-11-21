@@ -1,0 +1,24 @@
+{
+  "name": "react-redux-events-sample",
+  "version": "0.0.1",
+  "description": "More react and redux code",
+  "main": "index.js",
+  "dependencies": {
+    "reselect": "^2.5.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "example"
+  ],
+  "author": "@armw4 <Antwan Wimberly>",
+  "license": "MIT"
+}

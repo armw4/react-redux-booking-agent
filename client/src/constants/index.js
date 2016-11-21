@@ -1,0 +1,5 @@
+export const SEARCH_OPEN = 'SEARCH_OPEN'
+
+export const CALENDAR_OPEN = 'CALENDAR_OPEN'
+
+export const CALENDAR_CLOSED = 'CALENDAR_CLOSED'
