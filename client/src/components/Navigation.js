@@ -17,17 +17,19 @@ export default class extends PureComponent {
           <nav className="navigation">
             <ul className="group">
               <li className="burger">
-                <Hamburger />
+                <button><Hamburger /></button>
               </li>
               <li className="date">
-                <span>{selectedDate.format('MMMM YYYY')}</span>
-                <ChevronSouth />
+                <button>
+                  <span>{selectedDate.format('MMMM YYYY')}</span>
+                  <ChevronSouth />
+                </button>
               </li>
               <li className="search">
-                <Search />
+                <button><Search /></button>
               </li>
               <li className="new">
-                <Plus />
+                <button><Plus /></button>
               </li>
             </ul>
           </nav>
