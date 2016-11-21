@@ -1,6 +1,7 @@
 import moment from 'moment'
 import { bookings } from '../../../prototype/bookings.json'
 import filter from 'lodash.filter'
+import escape from 'escape-string-regexp'
 
 export const SELECT_DATE = 'SELECT_DATE'
 
@@ -16,12 +17,26 @@ export const receiveBookings = (bookings) => ({
   bookings
 })
 
-export const fetchBookings = (selectedDate, query) => {
+const filterBookings = (selectedDate, query, events) => {
   const thirtyDaysFromSelectedDate = moment(selectedDate).add(30, 'd')
 
-  const bookingsForNextThirtyDays = filter(bookings, ({ start }) => {
+  const filteredEvents = filter(events, ({ start }) => {
     return moment(start).isBetween(selectedDate, thirtyDaysFromSelectedDate, null, '[]')
   })
+
+  if (query) {
+    const contains = new RegExp(escape(query), 'i')
+
+    filter(filteredEvents, ({ eventName, roomName  }) => {
+      return contains.test(eventName) || contains.test(roomName)
+    })
+  } else {
+    return filteredEvents
+  }
+}
+
+export const fetchBookings = (selectedDate, query) => {
+  const bookingsForNextThirtyDays = filterBookings(selectedDate, query, bookings)
 
   return receiveBookings(bookingsForNextThirtyDays)
 }
@@ -57,3 +72,18 @@ export const searchBookings = query => ({
   type: SEARCH_BOOKINGS,
   query
 })
+
+export const ADD_BOOKING = 'ADD_BOOKING'
+
+export const addBooking = (selectedDate, query, booking) => {
+  bookings.push(booking)
+
+  const bookingSatifiesCurrentCriteria = filterBookings(selectedDate, query, [booking]).length
+
+  if (bookingSatifiesCurrentCriteria) {
+    return {
+      type: ADD_BOOKING,
+      booking
+    }
+  }
+}

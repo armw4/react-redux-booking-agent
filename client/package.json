@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "escape-string-regexp": "^1.0.5",
     "lodash.filter": "^4.6.0",
     "lodash.groupby": "^4.6.0",
     "lodash.orderby": "^4.6.0",
