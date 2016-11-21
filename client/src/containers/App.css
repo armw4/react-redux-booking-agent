@@ -35,7 +35,7 @@
 
 .navigation {
   background-color: #F5F5F5;
-  padding: 1.5em 1.3em;
+  padding: 1.2em 0.8em;
 }
 
 .navigation ul {
@@ -49,8 +49,27 @@
 }
 
 .navigation i svg {
-  width: 16px;
-  height: 16px;
+  width: 1.8em;
+  height: 1.8em;
+  fill: #507FEA;
+}
+
+.navigation .date svg {
+  width: 0.9em;
+  height: 0.9em;
+}
+
+.navigation .date .svg-icon {
+  margin-left: 0.5em;
+}
+
+.navigation .burger, .navigation .search {
+  width: 15%;
+}
+
+.navigation .date {
+  font-size: 1.3em;
+  width: 60%;
 }
 
 .booking-group > .booking:not(:last-child) {
