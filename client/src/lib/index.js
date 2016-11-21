@@ -5,12 +5,21 @@ import reduce from 'lodash.reduce'
 
 const FORMAT = 'YYYY-MM-DD'
 const DISPLAY_DATE_FORMAT = 'ddd MMM D'
+const DISPLAY_TIME_FORMAT = 'LT'
 
 const bookingInvariant = start => ({ [start.format(FORMAT)]: [] })
 
 const createBookingGroup = (displayDate, bookings) => ({
   displayDate: displayDate.toUpperCase(),
-  bookings
+  bookings: orderBy(bookings, ({ start }) => moment(start).unix()).map(booking => {
+    const { start, end } = booking
+
+    return {
+      ...booking,
+      startTime: moment(start).format(DISPLAY_TIME_FORMAT),
+      endTime: moment(end).format(DISPLAY_TIME_FORMAT)
+    }
+  })
 })
 
 export const getBookingGroups = (minDate, bookings) => {

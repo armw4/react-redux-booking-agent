@@ -6,13 +6,13 @@ export default class extends PureComponent {
 
     const nodes = groups.map(({ displayDate, bookings }) => {
       const nodes = bookings.length ?
-        bookings.map(({ start, end, id }) => {
+        bookings.map(({ startTime, endTime, id }) => {
           return (
             <div key={id} className="booking">
-              {start} - {end}
+              {startTime} - {endTime}
             </div>
           )
-        }) : <p className="booking empty">You have not bookings for these dates.</p>
+        }) : <p className="booking empty">You have no bookings for these dates.</p>
 
       return (
         <div key={displayDate} className="booking-group">
