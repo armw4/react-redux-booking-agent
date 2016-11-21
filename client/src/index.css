@@ -7,3 +7,9 @@ body {
 .rc-calendar {
   width: 100%
 }
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}

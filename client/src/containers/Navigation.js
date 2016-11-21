@@ -1,16 +1,16 @@
-import React from 'react
+import React from 'react'
 import Navigation from '../components/Navigation'
 import { connect } from 'react-redux'
 
-const Container = ({ state, searchQuery })=> {
-  return <Navigation state={state} />
-}
+const Container = props => <Navigation {...props} />
 
-const mapStateToProps = ({ calendar: state, search: searchQuery }) => {
+const mapStateToProps = props => {
+  const { navigation: { current: state }, search: searchQuery, date: selectedDate } = props
 
   return {
     state,
-    searchQuery
+    searchQuery,
+    selectedDate
   }
 }
 

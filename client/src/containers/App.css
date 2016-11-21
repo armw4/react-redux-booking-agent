@@ -33,6 +33,21 @@
   margin: 0
 }
 
+.navigation {
+  background-color: #F5F5F5;
+  padding: 1.5em 1.3em;
+}
+
+.navigation ul {
+  padding: 0;
+  margin: 0;
+}
+
+.navigation ul li {
+  list-style: none;
+  float: left;
+}
+
 .booking-group > .booking:not(:last-child) {
   border-bottom: 1px solid #E6E7E8;
 }
