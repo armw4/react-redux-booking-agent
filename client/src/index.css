@@ -4,6 +4,10 @@ body {
   font-family: sans-serif;
 }
 
+button {
+  outline: none;
+}
+
 .rc-calendar {
   width: 100%
 }

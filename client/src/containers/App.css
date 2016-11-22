@@ -48,7 +48,7 @@
   float: left;
 }
 
-.navigation i svg {
+.navigation i svg, .search-bar svg {
   width: 1.8em;
   height: 1.8em;
   fill: #507FEA;
@@ -72,7 +72,6 @@
   padding: 0;
   border: 0;
   background-color: transparent;
-  outline: none;
 }
 
 .navigation .date {
@@ -101,6 +100,35 @@
   float: left;
 }
 
+.search-bar input {
+  border-radius: 0;
+}
+
+.search-bar .search-icon {
+  width: 10%;
+  padding-top: 0.15em;
+  padding-left: 0.4em;
+  border: 1px solid #ccc;
+  background-color: #F5F5F5;
+  border-right: none;
+}
+
+.search-bar .search-input {
+  width: 76.3%;
+}
+
+.search-bar .cancel {
+  background-color: #F5F5F5;
+  border: 1px solid #ccc;
+  line-height: 1.95;
+  color: #507FEA;
+  border-left: none;
+}
+
 .booking .time {
   width: 23%;
+}
+
+.search-bar .search-component {
+  float: left;
 }
