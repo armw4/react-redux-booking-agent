@@ -4,17 +4,20 @@ import { connect } from 'react-redux'
 import Collapse from 'react-bootstrap/lib/Collapse'
 import { CALENDAR_OPEN } from '../constants/'
 
-const Container = ({ state }) => {
+const Container = ({ state, previousState }) => {
   return (
-    <Collapse in={state === CALENDAR_OPEN}>
+    <Collapse in={state === CALENDAR_OPEN || previousState === CALENDAR_OPEN}>
       <Calendar />
     </Collapse>
   )
 }
 
-const mapStateToProps = ({ navigation: { current: state } })=> {
+const mapStateToProps = state => {
+  const { navigation: { current, previous: previousState } } = state
+
   return {
-    state
+    state: current,
+    previousState
   }
 }
 

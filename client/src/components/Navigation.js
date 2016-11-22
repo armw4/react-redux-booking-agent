@@ -23,7 +23,7 @@ export default class extends PureComponent {
               <li className="date">
                 <button onClick={state === CALENDAR_OPEN ? onCloseCalendar : onOpenCalendar}>
                   <span>{selectedDate.format('MMMM YYYY')}</span>
-                  {state === CALENDAR_OPEN ? <ChevronSouth /> : <ChevronNorth />}
+                  {state === CALENDAR_OPEN ? <ChevronNorth /> : <ChevronSouth />}
                 </button>
               </li>
               <li className="search">
