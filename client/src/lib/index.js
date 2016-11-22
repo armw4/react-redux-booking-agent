@@ -9,24 +9,29 @@ const DISPLAY_TIME_FORMAT = 'LT'
 
 const bookingInvariant = start => ({ [start.format(FORMAT)]: [] })
 
-const createBookingGroup = (displayDate, bookings) => ({
-  displayDate: displayDate.toUpperCase(),
-  bookings: orderBy(bookings, ({ start }) => moment(start).unix()).map(booking => {
-    const { start, end } = booking
+const createBookingGroup = (displayDate, bookings) => {
+  const now = moment()
 
-    const startDate = moment(start)
-    const endDate = moment(end)
+  return {
+    displayDate: displayDate.toUpperCase(),
+      bookings: orderBy(bookings, ({ start }) => moment(start).unix()).map(booking => {
+      const { start, end } = booking
 
-    return {
-      ...booking,
-      startTime: startDate.format(DISPLAY_TIME_FORMAT),
-      endTime: endDate.format(DISPLAY_TIME_FORMAT),
-      duration: startDate.from(endDate, true)
-        .replace(/(hours|minutes)/g, match => match[0])
-        .replace(/(\d+) (h|m)/g, '$1$2')
-    }
-  })
-})
+      const startDate = moment(start)
+      const endDate = moment(end)
+
+      return {
+        ...booking,
+        startTime: startDate.format(DISPLAY_TIME_FORMAT),
+        endTime: endDate.format(DISPLAY_TIME_FORMAT),
+        isOccurringNow: now.isBetween(startDate, endDate, null, '[]'),
+        duration: startDate.from(endDate, true)
+          .replace(/(hours|minutes)/g, match => match[0])
+          .replace(/(\d+) (h|m)/g, '$1$2')
+      }
+    })
+  }
+}
 
 export const getBookingGroups = (minDate, bookings) => {
     const formattedMinDate = minDate.format(FORMAT)

@@ -21,7 +21,7 @@ const filterBookings = (selectedDate, query, events) => {
   const thirtyDaysFromSelectedDate = moment(selectedDate).add(30, 'd')
 
   const filteredEvents = filter(events, ({ start }) => {
-    return moment(start).isBetween(selectedDate, thirtyDaysFromSelectedDate, null, '[]')
+    return moment(start).isBetween(selectedDate, thirtyDaysFromSelectedDate, 'day', '[]')
   })
 
   if (query) {

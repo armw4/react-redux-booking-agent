@@ -48,10 +48,17 @@
   float: left;
 }
 
-.navigation i svg, .search-bar svg {
+.navigation i svg, .search-bar svg, .booking svg {
   width: 1.8em;
   height: 1.8em;
+}
+
+.navigation i svg, .search-bar svg {
   fill: #507FEA;
+}
+
+.booking svg {
+  fill: #009E21;
 }
 
 .navigation .date svg {
@@ -92,6 +99,10 @@
   padding: 2em 0.8em;
 }
 
+.booking {
+  position: relative;
+}
+
 .booking span {
   display: block;
 }
@@ -127,6 +138,16 @@
 
 .booking .time {
   width: 23%;
+}
+
+.booking .now {
+  width: 20%;
+}
+
+.booking .now .svg-icon {
+  position: absolute;
+  bottom: 0.65em;
+  right: 0.8em;
 }
 
 .search-bar .search-component {
