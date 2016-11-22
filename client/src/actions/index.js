@@ -27,9 +27,7 @@ const filterBookings = (selectedDate, query, events) => {
   if (query) {
     const contains = new RegExp(escape(query), 'i')
 
-    filter(filteredEvents, ({ eventName, roomName  }) => {
-      return contains.test(eventName) || contains.test(roomName)
-    })
+    return filter(filteredEvents, ({ eventName, roomName  }) => contains.test(eventName) || contains.test(roomName))
   } else {
     return filteredEvents
   }

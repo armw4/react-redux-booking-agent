@@ -7,19 +7,25 @@ import ChevronSouth from '../../font-awesome/blue/svg/chevron-down.svg'
 import ChevronNorth from '../../font-awesome/blue/svg/chevron-up.svg'
 
 export default class extends PureComponent {
+  handleSearchChange = ({ target: { value } }) =>  {
+    const { onSearchBookings } = this.props
+
+    onSearchBookings(value)
+  }
+
   searchBar = () => {
     const { onDismissSearch } = this.props
 
     return (
       <div className="search-bar group">
         <Search className="search-icon search-component" id="search-addon" />
-        <input type="text" className="search-input form-control search-component" placeholder="Search bookings" />
+        <input onChange={this.handleSearchChange} type="text" className="search-input form-control search-component" placeholder="Search bookings" />
         <button onClick={onDismissSearch} className="cancel search-component">Cancel</button>
       </div>
     )
   }
 
-  onSearchClick = () => {
+  handleSearchClick = () => {
     const { onOpenSearch, state } = this.props
 
     onOpenSearch(state)
@@ -41,7 +47,7 @@ export default class extends PureComponent {
             </button>
           </li>
           <li className="search">
-            <button onClick={this.onSearchClick}><Search /></button>
+            <button onClick={this.handleSearchClick}><Search /></button>
           </li>
           <li className="new">
             <button><Plus /></button>

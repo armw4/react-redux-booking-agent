@@ -1,7 +1,7 @@
 import React from 'react'
 import Navigation from '../components/Navigation'
 import { connect } from 'react-redux'
-import { openCalendar, closeCalendar, openSearch, dismissSearch } from '../actions/'
+import { openCalendar, closeCalendar, openSearch, dismissSearch, searchBookings } from '../actions/'
 import { bindActionCreators } from 'redux'
 
 const Container = props => {
@@ -10,6 +10,7 @@ const Container = props => {
     closeCalendar: onCloseCalendar,
     openSearch: onOpenSearch,
     dismissSearch: onDismissSearch,
+    searchBookings: onSearchBookings,
     ...rest
   } = props
 
@@ -18,6 +19,7 @@ const Container = props => {
     onCloseCalendar,
     onOpenSearch,
     onDismissSearch,
+    onSearchBookings,
     ...rest
   }
 
@@ -35,7 +37,7 @@ const mapStateToProps = props => {
 }
 
 const mapDispatchToProps = dispatch => {
-  const actions = { openCalendar, closeCalendar, openSearch, dismissSearch }
+  const actions = { openCalendar, closeCalendar, openSearch, dismissSearch, searchBookings }
 
   return bindActionCreators(actions, dispatch)
 }
