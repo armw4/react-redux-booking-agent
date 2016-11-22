@@ -1,6 +1,7 @@
 # react-redux booking sample
 
 ```
+➜ cd client
 ➜ npm install
 ➜ npm start
 ```
