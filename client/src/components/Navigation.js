@@ -25,14 +25,8 @@ export default class extends PureComponent {
     )
   }
 
-  handleSearchClick = () => {
-    const { onOpenSearch, state } = this.props
-
-    onOpenSearch(state)
-  }
-
   navMenu = () => {
-    const { state, selectedDate, onOpenCalendar, onCloseCalendar } = this.props
+    const { state, selectedDate, onOpenCalendar, onOpenSearch, onCloseCalendar } = this.props
 
     return (
       <nav className="navigation">
@@ -47,7 +41,7 @@ export default class extends PureComponent {
             </button>
           </li>
           <li className="search">
-            <button onClick={this.handleSearchClick}><Search /></button>
+            <button onClick={onOpenSearch}><Search /></button>
           </li>
           <li className="new">
             <button><Plus /></button>

@@ -53,9 +53,8 @@ export const closeCalendar = () => ({
 
 export const OPEN_SEARCH = 'OPEN_SEARCH'
 
-export const openSearch = state => ({
-  type: OPEN_SEARCH,
-  state
+export const openSearch = () => ({
+  type: OPEN_SEARCH
 })
 
 export const DISMISS_SEARCH = 'DISMISS_SEARCH'

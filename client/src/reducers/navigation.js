@@ -20,7 +20,7 @@ export default (state = DEFAULT_STATE, action) => {
       }
     case OPEN_SEARCH:
       return {
-        previous: action.state,
+        previous: state.current,
         current: SEARCH_OPEN
       }
     case DISMISS_SEARCH:
