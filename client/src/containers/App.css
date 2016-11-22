@@ -72,6 +72,7 @@
   padding: 0;
   border: 0;
   background-color: transparent;
+  outline: none;
 }
 
 .navigation .date {
@@ -92,6 +93,14 @@
   padding: 2em 0.8em;
 }
 
-.time span {
+.booking span {
   display: block;
+}
+
+.booking > div {
+  float: left;
+}
+
+.booking .time {
+  width: 23%;
 }

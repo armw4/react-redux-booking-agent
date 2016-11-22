@@ -4,10 +4,11 @@ import Hamburger from '../../font-awesome/blue/svg/bars.svg'
 import Search from '../../font-awesome/blue/svg/search.svg'
 import Plus from '../../font-awesome/blue/svg/plus.svg'
 import ChevronSouth from '../../font-awesome/blue/svg/chevron-down.svg'
+import ChevronNorth from '../../font-awesome/blue/svg/chevron-up.svg'
 
 export default class extends PureComponent {
   render() {
-    const { state, selectedDate } = this.props
+    const { state, selectedDate, onOpenCalendar, onCloseCalendar } = this.props
 
     switch(state) {
       case SEARCH_OPEN:
@@ -20,9 +21,9 @@ export default class extends PureComponent {
                 <button><Hamburger /></button>
               </li>
               <li className="date">
-                <button>
+                <button onClick={state === CALENDAR_OPEN ? onCloseCalendar : onOpenCalendar}>
                   <span>{selectedDate.format('MMMM YYYY')}</span>
-                  <ChevronSouth />
+                  {state === CALENDAR_OPEN ? <ChevronSouth /> : <ChevronNorth />}
                 </button>
               </li>
               <li className="search">

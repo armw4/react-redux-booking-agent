@@ -6,13 +6,17 @@ export default class extends PureComponent {
 
     const nodes = groups.map(({ displayDate, bookings }) => {
       const nodes = bookings.length ?
-        bookings.map(({ duration, startTime, endTime, id }) => {
+        bookings.map(({ duration, startTime, eventName, roomName, endTime, id }) => {
           return (
-            <div key={id} className="booking">
+            <div key={id} className="booking group">
               <div className="time">
                 <span className="event-start">{startTime}</span>
                 <span className="event-end">{endTime}</span>
                 <span className="duration">{duration}</span>
+              </div>
+              <div className="names">
+                <span className="">{eventName}</span>
+                <span className="">{roomName}</span>
               </div>
             </div>
           )
