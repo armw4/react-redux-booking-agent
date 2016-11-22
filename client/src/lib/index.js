@@ -53,6 +53,7 @@ export const getBookingGroups = (minDate, bookings) => {
     const bookingDatesAscending = orderBy(bookingDates, date => moment(date).unix())
 
     return reduce(bookingDatesAscending, (output, key, index) => {
+      const now = moment()
       const groups = []
       const date = moment(key)
       const currentBookings = groupedBookings[key]
@@ -60,7 +61,7 @@ export const getBookingGroups = (minDate, bookings) => {
       const nextDate = bookingDatesAscending[index + 1]
       const nextBookings = nextDate && groupedBookings[nextDate]
       const isMininumDate = index === 0
-      const isToday = date.diff(moment(), 'days') === 0
+      const isToday = now.isSame(date, 'd')
       const noBookingsBetweenCurrentDateAndNextDate = nextBookings && moment(nextDate).diff(date, 'days') > 1
 
       if (isMininumDate || isNotBookingInvariant) {
