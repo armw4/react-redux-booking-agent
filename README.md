@@ -1,5 +1,7 @@
 # react-redux booking sample
 
+Not currently fully responsive. Based on iPhone 6 Plus.
+
 ```
 ➜ cd client
 ➜ npm install
