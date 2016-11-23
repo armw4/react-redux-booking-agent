@@ -111,21 +111,23 @@
   float: left;
 }
 
+.search-bar {
+  display: flex;
+  flex-direction: row;
+}
+
 .search-bar input {
   border-radius: 0;
+  padding: 1.5em;
 }
 
 .search-bar .search-icon {
-  width: 10%;
   padding-top: 0.15em;
   padding-left: 0.4em;
   border: 1px solid #ccc;
   background-color: #F5F5F5;
   border-right: none;
-}
-
-.search-bar .search-input {
-  width: 76.3%;
+  padding: 0.4em;
 }
 
 .search-bar .cancel {
