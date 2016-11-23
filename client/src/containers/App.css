@@ -139,7 +139,8 @@
 }
 
 .booking .time {
-  width: 23%;
+  text-align: right;
+  margin-right: 2.5em;
 }
 
 .booking .now {
